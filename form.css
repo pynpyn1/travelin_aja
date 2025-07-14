@@ -1,0 +1,205 @@
+/* Gaya dasar untuk formulir */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient to bottom right, #e0f7fa, #ffffff; /* Gradien latar belakang lembut */
+    margin: 0;
+    padding: 20px;
+    color: #343a40;
+}
+
+h1 {
+    color: #007bff; /* Warna biru primary Bootstrap */
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.custom-form-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border: none; /* Hilangkan border default card */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Bayangan lebih halus */
+}
+
+/* Latar belakang biru muda untuk bookingDetails */
+.bg-light-blue {
+    background-color: #e0f7fa; /* Warna biru muda */
+    border: 1px solid #b2ebf2;
+    color: #007bff;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+/* Penyesuaian untuk Bootstrap forms */
+.form-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px; /* Sedikit jarak di bawah label */
+}
+
+.form-control-lg, .form-select-lg {
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease; /* Transisi halus untuk hover/focus */
+}
+
+.form-control-lg:focus, .form-select-lg:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+.rounded-pill {
+    border-radius: 50rem !important; /* Membuat input lebih membulat */
+}
+
+/* Pesan sukses/error di formulir */
+.message {
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+.message.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+.message.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+/* Tombol Submit dan Kembali */
+.submit-button.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.submit-button.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.back-button.btn-outline-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.back-button.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Modifikasi untuk modal konfirmasi */
+.modal-header.bg-gradient-primary {
+    background: linear-gradient(to right, #007bff, #0056b3) !important; /* Gradien biru */
+    color: white !important;
+    border-bottom: none;
+}
+
+.modal-title {
+    font-size: 1.8rem !important;
+}
+
+.btn-close-white {
+    filter: brightness(0) invert(1); /* Membuat ikon close putih */
+}
+
+/* Gaya untuk Konten Tiket */
+#ticketContent.ticket-design {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek border putus-putus */
+.border-dashed {
+    border-style: dashed !important;
+}
+
+.ticket-header {
+    background-color: #f8f9fa; /* Latar belakang header tiket */
+    border-bottom: 1px solid #e9ecef;
+}
+
+.ticket-header h4 {
+    color: #007bff; /* Warna judul tur */
+}
+
+.detail-list li {
+    margin-bottom: 8px;
+    font-size: 1.05em;
+    color: #555;
+}
+
+.detail-list li strong {
+    color: #343a40;
+    min-width: 120px; /* Menjaga alignment */
+    display: inline-block;
+}
+
+.ticket-footer {
+    background-color: #f8f9fa;
+    font-size: 0.9em;
+    color: #6c757d;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Aturan untuk media cetak */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Sembunyikan elemen yang tidak relevan saat mencetak */
+    .modal-header,
+    .modal-footer,
+    .btn-close,
+    .modal-body > .text-center.fst-italic,
+    .modal-body > .d-grid.gap-2,
+    .form-container,
+    h1,
+    .back-button,
+    .submit-button
+    {
+        display: none !important;
+    }
+
+    /* Pastikan modal tetap terlihat dan tidak ada padding yang mengganggu */
+    .modal-dialog,
+    .modal-content,
+    .modal-body {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+
+    /* Fokuskan hanya pada konten tiket */
+    #ticketContent.ticket-design {
+        width: 100mm; /* Lebar standar tiket fisik, sesuaikan jika perlu */
+        height: auto;
+        margin: 10mm auto !important;
+        box-shadow: none !important;
+        border: 2px solid #007bff !important; /* Border utama tiket saat dicetak */
+        page-break-inside: avoid;
+        background-color: #ffffff !important;
+    }
+
+    /* Tambahan untuk menghindari footer browser saat cetak */
+    @page {
+        margin: 10mm;
+        size: A6 landscape; /* Atau portrait, tergantung preferensi Anda */
+    }
+}

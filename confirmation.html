@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelinAja - Konfirmasi Pemesanan Tiket</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="ahh.css"> <style>
+        body {
+            background-image: var(--background-gradient);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px 0; /* Tambahkan padding agar tidak terlalu mepet */
+        }
+        .ticket-container {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            position: relative;
+            overflow: hidden;
+            border-top: 10px solid var(--primary-color);
+            border-bottom: 10px solid var(--primary-color);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .ticket-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .ticket-header h2 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .ticket-header p {
+            color: #6c757d;
+        }
+        .ticket-details .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        .ticket-details .detail-item:last-child {
+            border-bottom: none;
+        }
+        .ticket-details .detail-item strong {
+            color: var(--text-color);
+        }
+        .ticket-details .detail-item span {
+            color: #555;
+            text-align: right;
+            flex-grow: 1; /* Agar span bisa mengambil sisa ruang */
+        }
+        .ticket-footer {
+            margin-top: 2rem;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 1.5rem;
+        }
+        .ticket-footer p {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        .qr-code {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        .qr-code img {
+            width: 180px;
+            height: 180px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #fff;
+        }
+        .total-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #28a745; /* Green for total */
+            text-align: right;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--primary-color);
+        }
+        .back-button {
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-container">
+        <div class="ticket-header">
+            <h2>Pemesanan Anda Berhasil Dikonfirmasi!</h2>
+            <p>Terima kasih telah memesan melalui TravelinAja. Berikut detail tiket Anda.</p>
+        </div>
+
+        <div class="ticket-details">
+            <div class="detail-item">
+                <strong>Nama Wisata:</strong>
+                <span id="confirmedTourName"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Nama Pemesan:</strong>
+                <span id="confirmedFullName"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Email:</strong>
+                <span id="confirmedEmail"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Nomor Telepon:</strong>
+                <span id="confirmedPhoneNumber"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Tanggal Wisata:</strong>
+                <span id="confirmedBookingDate"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Jumlah Peserta:</strong>
+                <span id="confirmedNumParticipants"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Metode Pembayaran:</strong>
+                <span id="confirmedPaymentMethod"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Harga per Orang:</strong>
+                <span id="confirmedPricePerPerson"></span>
+            </div>
+        </div>
+
+        <div class="total-price">
+            Total Pembayaran: <span id="confirmedTotalPrice"></span>
+        </div>
+
+        <div class="qr-code">
+            <img id="qrCodeImage" src="" alt="QR Code Booking">
+            <p class="mt-2 text-muted">Tunjukkan QR Code ini saat check-in.</p>
+        </div>
+
+        <div class="ticket-footer">
+            <p>Mohon simpan konfirmasi ini sebagai bukti pemesanan Anda.</p>
+            <p>Untuk pertanyaan lebih lanjut, hubungi layanan pelanggan kami di <a href="mailto:support@travelinaja.com">support@travelinaja.com</a></p>
+        </div>
+
+        <div class="back-button">
+            <a href="tour_booking.html" class="btn btn-secondary-custom">Pesan Wisata Lain</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bookingData = JSON.parse(localStorage.getItem('bookingConfirmationData'));
+
+            if (bookingData) {
+                document.getElementById('confirmedTourName').textContent = bookingData.tourName;
+                document.getElementById('confirmedFullName').textContent = bookingData.fullName;
+                document.getElementById('confirmedEmail').textContent = bookingData.email;
+                document.getElementById('confirmedPhoneNumber').textContent = bookingData.phoneNumber;
+                document.getElementById('confirmedBookingDate').textContent = bookingData.bookingDate;
+                document.getElementById('confirmedNumParticipants').textContent = bookingData.numParticipants;
+                
+                // Format metode pembayaran
+                let paymentMethodText = bookingData.paymentMethod;
+                if (paymentMethodText === 'credit_card') {
+                    paymentMethodText = 'Kartu Kredit/Debit';
+                } else if (paymentMethodText === 'bank_transfer') {
+                    paymentMethodText = 'Transfer Bank';
+                } else if (paymentMethodText === 'e_wallet') {
+                    paymentMethodText = 'E-Wallet';
+                }
+                document.getElementById('confirmedPaymentMethod').textContent = paymentMethodText;
+
+                document.getElementById('confirmedPricePerPerson').textContent = `IDR ${bookingData.pricePerPerson.toLocaleString('id-ID')}`;
+                document.getElementById('confirmedTotalPrice').textContent = `IDR ${bookingData.totalPrice.toLocaleString('id-ID')}`;
+
+                // Generate QR Code
+                const qrCodeData = `BOOKING_ID:${new Date().getTime()}|TOUR:${bookingData.tourName}|NAME:${bookingData.fullName}|DATE:${bookingData.bookingDate}`;
+                document.getElementById('qrCodeImage').src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(qrCodeData)}`;
+
+                // Opsional: Hapus data dari localStorage setelah ditampilkan
+                localStorage.removeItem('bookingConfirmationData');
+                localStorage.removeItem('selectedTourName');
+                localStorage.removeItem('selectedTourPrice');
+
+            } else {
+                // Jika tidak ada data, arahkan kembali ke halaman pemesanan
+                alert('Data pemesanan tidak ditemukan. Silakan lakukan pemesanan ulang.');
+                window.location.href = 'tour_booking.html';
+            }
+        });
+    </script>
+</body>
+</html>

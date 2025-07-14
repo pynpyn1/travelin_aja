@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelinAja - Paket Liburan Custom Impian Anda</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">Travelin-Aja</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tour_booking.html">Pemesanan Tiket</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Pelayanan</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="custom_package.html">Paket Liburan Custom</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ulasan.html">Ulasan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                </ul>
+                <div id="auth-buttons" class="d-flex">
+                    <a href="login.html" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="register.html" class="btn btn-primary">Daftar</a>
+                </div>
+                <div id="user-info" class="d-none align-items-center">
+                    <span id="welcome-message" class="me-3"></span>
+                    <button id="logout-button" class="btn btn-danger">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section-custom text-white text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">Rancang Perjalanan Impianmu Bersama Kami!</h1>
+            <p class="lead my-4 animate__animated animate__fadeInUp">Bebaskan imajinasimu, kami wujudkan liburan yang sepenuhnya sesuai keinginan dan gaya Anda.</p>
+            <a href="#custom-form-section" class="btn btn-primary btn-lg mt-3 animate__animated animate__zoomIn">Mulai Rancang Sekarang <i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section class="package-detail-section text-center">
+            <h2 class="mb-5 display-5 fw-bold">Mengapa Memilih Paket Liburan Custom TravelinAja?</h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="icon-box">
+                        <i class="fas fa-cogs"></i>
+                        <h4>Fleksibilitas Penuh</h4>
+                        <p>Atur tanggal, durasi, destinasi, dan aktivitas sesuai keinginan Anda, tanpa batasan.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="icon-box">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h4>Sesuai Anggaran Anda</h4>
+                        <p>Kami bantu optimalkan perjalanan agar sesuai dengan budget yang Anda miliki, tanpa mengurangi kualitas.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="icon-box">
+                        <i class="fas fa-star"></i>
+                        <h4>Pengalaman Unik</h4>
+                        <p>Ciptakan memori tak terlupakan dengan petualangan yang benar-benar personal dan eksklusif.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="icon-box">
+                        <i class="fas fa-headset"></i>
+                        <h4>Dukungan Penuh</h4>
+                        <p>Tim ahli kami siap membantu Anda dari perencanaan hingga keberangkatan dan kepulangan.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="icon-box">
+                        <i class="fas fa-route"></i>
+                        <h4>Jalur Tak Terbatas</h4>
+                        <p>Dari pegunungan hingga pantai tersembunyi, dari kota modern hingga desa tradisional, semuanya bisa Anda pilih.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="icon-box">
+                        <i class="fas fa-users-cog"></i>
+                        <h4>Untuk Siapa Saja</h4>
+                        <p>Cocok untuk solo traveler, keluarga, pasangan, rombongan, atau perjalanan bisnis dengan sentuhan rekreasi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="package-detail-section" id="example-packages">
+            <h2 class="text-center mb-5 display-5 fw-bold">Ide Paket Liburan Custom Populer Kami</h2>
+            <p class="text-center lead mb-5">Belum yakin ingin kemana? Jelajahi beberapa ide paket custom yang sering dipilih pelanggan kami untuk inspirasi!</p>
+
+            <div class="row align-items-center mb-5" id="raja-ampat">
+                <div class="col-md-6 order-md-2">
+                    <img src="https://i.pinimg.com/1200x/77/80/c8/7780c85c2901370b36362d2d0c273295.jpg" class="img-fluid rounded shadow-lg" alt="Petualangan Raja Ampat">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h3 class="mt-4 mt-md-0 fw-bold text-primary">Petualangan Bawah Laut Raja Ampat</h3>
+                    <p class="lead">3 Hari 2 Malam / 5 Hari 4 Malam / Custom</p>
+                    <p>Selami keindahan surgawi bawah laut Raja Ampat, Papua Barat. Paket ini dirancang untuk para pecinta laut dan fotografer bawah air.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Snorkeling atau Diving di Wayag, Piaynemo, Misool</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Menginap di resort tepi pantai atau homestay lokal</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Trekking ringan menuju viewpoint ikonik</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Pemandu lokal yang berpengalaman</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Transportasi antar pulau</li>
+                    </ul>
+                    <a href="#custom-form-section" class="btn btn-outline-primary mt-3">Rancang Paket Ini <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-5" id="yogyakarta-culture">
+                <div class="col-md-6">
+                    <img src="https://i.pinimg.com/1200x/61/a3/35/61a335903bd4794d6f267de987abfc2f.jpg" class="img-fluid rounded shadow-lg" alt="Budaya & Sejarah Yogyakarta">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="mt-4 mt-md-0 fw-bold text-primary">Eksplorasi Budaya & Sejarah Yogyakarta</h3>
+                    <p class="lead">2 Hari 1 Malam / 4 Hari 3 Malam / Custom</p>
+                    <p>Rasakan denyut nadi kebudayaan Jawa di kota Yogyakarta. Paket ini menggabungkan situs bersejarah dengan pengalaman budaya otentik.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Kunjungan ke Candi Borobudur dan Prambanan</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Tur Keraton Yogyakarta dan Tamansari</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Workshop membatik atau gamelan (opsional)</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Wisata kuliner khas Yogyakarta</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Penginapan butik di pusat kota</li>
+                    </ul>
+                    <a href="#custom-form-section" class="btn btn-outline-primary mt-3">Rancang Paket Ini <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-5" id="bromo">
+                <div class="col-md-6 order-md-2">
+                    <img src="https://i.pinimg.com/1200x/2d/5f/c7/2d5fc7d62058e22a76f2f4c405a8b792.jpg" class="img-fluid rounded shadow-lg" alt="Trekking Gunung Bromo">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h3 class="mt-4 mt-md-0 fw-bold text-primary">Trekking Seru Gunung Bromo & Semeru</h3>
+                    <p class="lead">2 Hari 1 Malam / 3 Hari 2 Malam / Custom</p>
+                    <p>Saksikan matahari terbit epik di Bromo dan rasakan petualangan mendaki gunung berapi aktif. Paket untuk petualang sejati.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Penjemputan dari Surabaya/Malang</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Tur sunrise Bromo via jeep 4x4</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Trekking kawah Bromo dan Pasir Berbisik</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Penginapan di area Bromo</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Pilihan trekking ke Ranu Kumbolo (untuk paket lebih panjang)</li>
+                    </ul>
+                    <a href="#custom-form-section" class="btn btn-outline-primary mt-3">Rancang Paket Ini <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-5" id="lombok">
+                <div class="col-md-6">
+                    <img src="https://i.pinimg.com/1200x/bc/7a/01/bc7a01f74763f4b75789d05928a7590d.jpg" class="img-fluid rounded shadow-lg" alt="Pantai Lombok">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="mt-4 mt-md-0 fw-bold text-primary">Relaksasi Pantai Eksotis Lombok & Gili</h3>
+                    <p class="lead">3 Hari 2 Malam / 5 Hari 4 Malam / Custom</p>
+                    <p>Nikmati ketenangan dan keindahan pantai-pantai alami Lombok serta pulau-pulau Gili yang menawan.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Tur pulau Gili Trawangan, Meno, Air</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Snorkeling dan aktivitas air lainnya</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Kunjungan ke Pantai Kuta Lombok dan Tanjung Aan</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Resort tepi pantai atau villa pribadi</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Jelajah desa adat Sasak</li>
+                    </ul>
+                    <a href="#custom-form-section" class="btn btn-outline-primary mt-3">Rancang Paket Ini <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="custom-form-section py-5" id="custom-form-section">
+            <div class="container">
+                <h2 class="text-center mb-5 display-5 fw-bold">Rancang Paket Liburan Anda Sekarang!</h2>
+                <p class="text-center lead mb-5">Isi formulir di bawah ini dan biarkan tim ahli kami mewujudkan perjalanan impian Anda.</p>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <form id="customPackageForm" class="p-4 p-md-5 bg-white rounded shadow-lg">
+                            <div class="mb-3">
+                                <label for="namaLengkap" class="form-label">Nama Lengkap Anda <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="namaLengkap" placeholder="Masukkan nama lengkap Anda" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Anda <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="email" placeholder="contoh@domain.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nomorTelepon" class="form-label">Nomor Telepon (WhatsApp) <span class="text-danger">*</span></label>
+                                <input type="tel" class="form-control" id="nomorTelepon" placeholder="+62 8xx xxxx xxxx" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="jumlahPeserta" class="form-label">Jumlah Peserta <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="jumlahPeserta" min="1" value="1" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="destinasi" class="form-label">Destinasi yang Diinginkan (cth: Bali, Raja Ampat, Eropa, dll.) <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="destinasi" rows="3" placeholder="Sebutkan destinasi yang Anda impikan, bisa lebih dari satu..." required></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="tanggalBerangkat" class="form-label">Tanggal Keberangkatan Prediksi <span class="text-danger">*</span></label>
+                                    <input type="date" class="form-control" id="tanggalBerangkat" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="durasi" class="form-label">Durasi (Jumlah Hari) <span class="text-danger">*</span></label>
+                                    <input type="number" class="form-control" id="durasi" min="1" value="3" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="tipePerjalanan" class="form-label">Tipe Perjalanan</label>
+                                <select class="form-select" id="tipePerjalanan">
+                                    <option value="">Pilih Tipe Perjalanan</option>
+                                    <option value="petualangan">Petualangan & Alam</option>
+                                    <option value="budaya">Budaya & Sejarah</option>
+                                    <option value="relaksasi">Relaksasi & Pantai</option>
+                                    <option value="kuliner">Kuliner</option>
+                                    <option value="honeymoon">Honeymoon</option>
+                                    <option value="keluarga">Liburan Keluarga</option>
+                                    <option value="bisnis">Perjalanan Bisnis (leisure)</option>
+                                    <option value="lainnya">Lainnya</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="anggaran" class="form-label">Estimasi Anggaran Per Orang (Opsional)</label>
+                                <input type="text" class="form-control" id="anggaran" placeholder="Cth: Rp 5.000.000 - Rp 10.000.000">
+                                <small class="form-text text-muted">Informasi anggaran membantu kami merancang penawaran terbaik untuk Anda.</small>
+                            </div>
+                            <div class="mb-4">
+                                <label for="permintaanKhusus" class="form-label">Permintaan Khusus / Catatan Lainnya</label>
+                                <textarea class="form-control" id="permintaanKhusus" rows="4" placeholder="Contoh: Saya ingin transportasi pribadi, butuh kamar dengan pemandangan laut, alergi makanan tertentu, dll."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100"><i class="fas fa-paper-plane me-2"></i> Kirim Permintaan Paket Custom</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="package-detail-section" id="faq-custom-package">
+            <h2 class="text-center mb-5 display-5 fw-bold">Pertanyaan Umum Seputar Paket Custom</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="card faq-item mb-2">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link d-flex justify-content-between align-items-center w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Bagaimana proses pemesanan paket custom?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="card-body">
+                            Anda cukup mengisi formulir permintaan paket custom di halaman ini dengan detail keinginan Anda. Tim kami akan segera menghubungi Anda untuk diskusi lebih lanjut, menyusun itinerary, dan memberikan penawaran terbaik.
+                        </div>
+                    </div>
+                </div>
+                <div class="card faq-item mb-2">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link d-flex justify-content-between align-items-center w-100 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Berapa lama waktu yang dibutuhkan untuk menyusun paket custom?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="card-body">
+                            Prosesnya bervariasi tergantung kerumitan permintaan Anda. Umumnya, dalam 1-3 hari kerja setelah Anda mengisi formulir, tim kami akan memberikan draf awal atau menghubungi Anda untuk detail tambahan.
+                        </div>
+                    </div>
+                </div>
+                <div class="card faq-item mb-2">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link d-flex justify-content-between align-items-center w-100 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Apakah ada biaya untuk konsultasi awal?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="card-body">
+                            Tidak ada! Konsultasi awal dan penyusunan draf penawaran paket custom tidak dikenakan biaya. Anda baru akan membayar setelah menyetujui paket yang kami rancang.
+                        </div>
+                    </div>
+                </div>
+                <div class="card faq-item mb-2">
+                    <div class="card-header" id="headingFour">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link d-flex justify-content-between align-items-center w-100 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Destinasi apa saja yang bisa dicustom?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                        <div class="card-body">
+                            Kami melayani hampir semua destinasi di Indonesia yang dapat diakses dengan aman dan nyaman. Jika Anda memiliki destinasi impian di luar negeri, kami juga dapat mencoba membantu mewujudkannya.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <p>Punya pertanyaan lain? Jangan ragu hubungi kami!</p>
+                <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone-alt me-2"></i> Hubungi Kami</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Travelin-Aja</p>
+            <p><strong>UTS Pemrograman Web Portal</strong></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="auth.js"></script>
+    <script>
+        // Optional: Client-side form submission handling
+        document.getElementById('customPackageForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah pengiriman formulir default
+
+            // Anda bisa menambahkan validasi formulir di sini
+            const namaLengkap = document.getElementById('namaLengkap').value;
+            const email = document.getElementById('email').value;
+            // Dapatkan nilai input lainnya
+
+            if (namaLengkap && email) {
+                alert('Terima kasih! Permintaan paket custom Anda telah kami terima. Tim kami akan segera menghubungi Anda.');
+                // Di sini Anda akan mengirim data formulir ke server (misalnya dengan fetch API atau XMLHttpRequest)
+                // Contoh:
+                // fetch('/api/submit-custom-package', {
+                //     method: 'POST',
+                //     headers: {
+                //         'Content-Type': 'application/json'
+                //     },
+                //     body: JSON.stringify({ namaLengkap, email, ... })
+                // })
+                // .then(response => response.json())
+                // .then(data => {
+                //     console.log(data);
+                //     alert('Permintaan berhasil dikirim!');
+                //     this.reset(); // Reset formulir setelah berhasil
+                // })
+                // .catch(error => {
+                //     console.error('Error:', error);
+                //     alert('Terjadi kesalahan saat mengirim permintaan. Silakan coba lagi.');
+                // });
+                this.reset(); // Untuk demo, langsung reset form
+            } else {
+                alert('Harap lengkapi semua bidang yang wajib diisi.');
+            }
+        });
+    </script>
+</body>
+</html>

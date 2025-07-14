@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TravelinAja - Lengkapi Pemesanan Wisata Anda</title>
+    <link rel="stylesheet" href="form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.17.0/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <h1 class="text-center my-4 display-5 fw-bold text-primary">Lengkapi Detail Pemesanan Wisata Anda</h1>
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="card shadow-lg p-4 mb-4 rounded-4 custom-form-card">
+                    <div id="bookingDetails" class="mb-4 text-center p-3 rounded bg-light-blue">
+                        </div>
+
+                    <form id="bookingForm" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="fullName" class="form-label d-flex align-items-center"><i class="bi bi-person-fill me-2 text-primary"></i>Nama Lengkap</label>
+                            <input type="text" id="fullName" name="fullName" class="form-control form-control-lg rounded-pill" placeholder="Masukkan nama lengkap Anda" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label d-flex align-items-center"><i class="bi bi-envelope-fill me-2 text-primary"></i>Email</label>
+                            <input type="email" id="email" name="email" class="form-control form-control-lg rounded-pill" placeholder="Masukkan alamat email Anda" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$">
+                            <small class="error-message text-danger ms-3 mt-1" id="emailError"></small>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phoneNumber" class="form-label d-flex align-items-center"><i class="bi bi-phone-fill me-2 text-primary"></i>Nomor Telepon</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control form-control-lg rounded-pill" placeholder="Contoh: +6281234567890" required pattern="^\+\d{10,15}$">
+                            <small class="error-message text-danger ms-3 mt-1" id="phoneError"></small>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="departureDate" class="form-label d-flex align-items-center"><i class="bi bi-calendar-date-fill me-2 text-primary"></i>Tanggal Keberangkatan</label>
+                            <input type="date" id="departureDate" name="departureDate" class="form-control form-control-lg rounded-pill" required>
+                            <small class="error-message text-danger ms-3 mt-1" id="dateError"></small>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="numParticipants" class="form-label d-flex align-items-center"><i class="bi bi-people-fill me-2 text-primary"></i>Jumlah Peserta</label>
+                            <input type="number" id="numParticipants" name="numParticipants" class="form-control form-control-lg rounded-pill" min="1" value="1" required>
+                            <small class="error-message text-danger ms-3 mt-1" id="numParticipantsError"></small>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="paymentMethod" class="form-label d-flex align-items-center"><i class="bi bi-credit-card-fill me-2 text-primary"></i>Metode Pembayaran</label>
+                            <select id="paymentMethod" name="paymentMethod" class="form-select form-select-lg rounded-pill" required>
+                                <option value="">Pilih Metode Pembayaran</option>
+                                <option value="transfer_bank">Transfer Bank</option>
+                                <option value="kartu_kredit">Kartu Kredit</option>
+                                <option value="ewallet">E-wallet</option>
+                            </select>
+                            <small class="error-message text-danger ms-3 mt-1" id="paymentMethodError"></small>
+                        </div>
+
+                        <div class="col-12">
+                            <div id="formMessage" class="message text-center my-3 p-3 rounded-3"></div>
+                        </div>
+
+                        <div class="col-12 d-grid gap-2">
+                            <button type="submit" class="submit-button btn btn-primary btn-lg rounded-pill py-3 fw-bold">Konfirmasi Pemesanan</button>
+                            <button type="button" class="back-button btn btn-outline-secondary btn-lg rounded-pill py-3 fw-bold" onclick="window.history.back()">Kembali</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow-lg">
+                <div class="modal-header bg-gradient-primary text-white p-4 rounded-top-4 d-flex justify-content-between align-items-center">
+                    <h5 class="modal-title fs-4 fw-bold" id="confirmationModalLabel"><i class="bi bi-check-circle-fill me-2"></i>Pemesanan Berhasil!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div id="ticketContent" class="ticket-design p-4 rounded-3 border border-2 border-dashed border-info">
+                        <div class="ticket-header text-center pb-3 mb-3 border-bottom border-secondary border-opacity-25">
+                            <h4 class="mb-1 text-primary fw-bold">TravelinAja - Tiket Wisata</h4>
+                            <p class="mb-0 text-muted fs-6">Kode Pemesanan: <strong id="ticketBookingCode" class="text-dark"></strong></p>
+                        </div>
+
+                        <div class="ticket-body">
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <h5 class="text-success mb-2"><i class="bi bi-geo-alt-fill me-2"></i>Detail Tur</h5>
+                                    <ul class="list-unstyled detail-list">
+                                        <li><strong>Nama Tur:</strong> <span id="ticketTourName"></span></li>
+                                        <li><strong>Tanggal:</strong> <span id="ticketDepartureDate"></span></li>
+                                        <li><strong>Peserta:</strong> <span id="ticketNumParticipants"></span> orang</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 text-md-end">
+                                    <h5 class="text-info mb-2"><i class="bi bi-wallet-fill me-2"></i>Detail Harga</h5>
+                                    <ul class="list-unstyled detail-list">
+                                        <li><strong>Harga/Orang:</strong> <span id="ticketPricePerPerson"></span></li>
+                                        <li class="fs-5 fw-bold text-danger mt-2 pt-2 border-top border-secondary border-opacity-25"><strong>Total Harga:</strong> <span id="ticketTotalPrice"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="text-secondary mb-2"><i class="bi bi-person-badge-fill me-2"></i>Informasi Pemesan</h5>
+                                    <ul class="list-unstyled detail-list">
+                                        <li><strong>Nama:</strong> <span id="ticketCustomerName"></span></li>
+                                        <li><strong>Email:</strong> <span id="ticketCustomerEmail"></span></li>
+                                        <li><strong>Telepon:</strong> <span id="ticketCustomerPhone"></span></li>
+                                        <li><strong>Pembayaran:</strong> <span id="ticketPaymentMethod"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ticket-footer text-center pt-3 mt-4 border-top border-secondary border-opacity-25">
+                            <p class="mb-0 small text-muted">Terima kasih atas pemesanan Anda. Harap tunjukkan tiket ini saat kedatangan. Selamat menikmati perjalanan!</p>
+                        </div>
+                    </div>
+
+                    <p class="mt-4 text-center text-muted fst-italic">
+                        Kami telah mengirimkan detail konfirmasi ke email Anda. Silakan periksa folder spam jika Anda tidak menemukannya di kotak masuk.
+                    </p>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+                        <button id="downloadPdfButton" class="btn btn-primary btn-lg rounded-pill py-3 fw-bold flex-grow-1"><i class="bi bi-download me-2"></i>Unduh Tiket</button>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center border-0 pt-0 pb-4">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="form.js"></script>
+</body>
+</html>

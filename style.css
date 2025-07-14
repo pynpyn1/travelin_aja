@@ -1,0 +1,134 @@
+/* Menggunakan font Poppins untuk seluruh body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Warna latar belakang abu-abu muda */
+}
+
+/* Tambahkan lebih banyak ruang antar item navigasi */
+.navbar-nav .nav-item {
+    margin-right: 15px; /* Sesuaikan nilai ini sesuai kebutuhan untuk lebih banyak atau sedikit ruang */
+}
+
+/* Hapus margin ekstra pada item terakhir untuk mencegah ruang berlebihan di sisi kanan */
+.navbar-nav .nav-item:last-child {
+    margin-right: 0;
+}
+
+/* Sesuaikan jarak untuk merek (brand) dan tombol jika diperlukan */
+@media (min-width: 992px) { /* Berlaku untuk perangkat besar dan di atasnya */
+    .navbar-brand {
+        margin-right: 30px; /* Tambahkan ruang setelah merek jika diinginkan */
+    }
+
+    #auth-buttons {
+        margin-left: 15px; /* Tambahkan sedikit ruang sebelum tombol otentikasi */
+    }
+}
+
+        /* Custom styles for custom_package.html */
+        .hero-section-custom {
+            background-image: url(background/bg_package.png); /* Gambar latar belakang yang menarik */
+            background-size: cover;
+            background-position: center;
+            min-height: 500px; /* Tinggi minimum untuk bagian hero */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Bayangan teks agar lebih mudah dibaca */
+        }
+
+        .package-detail-section {
+            padding: 80px 0;
+            border-bottom: 1px solid #eee; /* Garis pemisah antar bagian */
+        }
+        .package-detail-section:nth-child(even) {
+            background-color: #f8f9fa; /* Warna latar belakang abu-abu terang untuk bagian genap */
+        }
+
+        .icon-box {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .icon-box i {
+            font-size: 3rem;
+            color: #007bff; /* Warna ikon utama */
+            margin-bottom: 15px;
+        }
+
+        .custom-form-section {
+            background-color: #e9f5ff; /* Latar belakang biru muda untuk formulir */
+            padding: 60px 0;
+        }
+
+        .faq-item .card-header {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .faq-item .card-header h5 button {
+            color: white;
+            text-decoration: none;
+            width: 100%;
+            text-align: left;
+            padding: .75rem 1.25rem;
+        }
+
+/* Gaya untuk Hero Section di index.html */
+.hero-section {
+    position: relative;
+    height: 60vh;
+    background: url(background/bg_index.jpg) no-repeat center center/cover;
+    color: white;
+}
+
+/* Overlay gelap untuk membuat teks lebih mudah dibaca */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Konten di dalam hero section */
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Gaya untuk kartu-kartu agar memiliki efek hover */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+/* Gaya untuk teks harga di kartu tur */
+.price-text {
+    color: #198754; /* Warna hijau Bootstrap */
+}
+
+/* Gaya untuk ikon di halaman layanan */
+.service-card .service-icon {
+    font-size: 3.5rem; /* Ukuran ikon emoji */
+    margin-bottom: 1rem;
+}
+
+/* Gaya untuk accordion di halaman FAQ */
+.accordion-button:not(.collapsed) {
+    color: #fff;
+    background-color: #0d6efd; /* Warna biru primer Bootstrap */
+}
+
+/* Penyesuaian untuk formulir login/register */
+.vh-100 {
+    min-height: 100vh;
+}

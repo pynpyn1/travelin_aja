@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelinAja - Destinasi Wisata Indonesia</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">Travelin-Aja</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tour_booking.html">Pemesanan Tiket</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Pelayanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="custom_package.html">Paket Liburan Custom</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="ulasan.html">Ulasan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                </ul>
+                <div id="auth-buttons" class="d-flex">
+                    <a href="login.html" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="register.html" class="btn btn-primary">Daftar</a>
+                </div>
+                <div id="user-info" class="d-none align-items-center">
+                    <span id="welcome-message" class="me-3"></span>
+                    <button id="logout-button" class="btn btn-danger">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-white text-center d-flex align-items-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Jelajahi Keindahan Alam dan Budaya Indonesia</h1>
+            <p class="lead my-3">Pesan tiket perjalanan dan akomodasi impian Anda dengan mudah dan cepat.</p>
+            <a href="tour_booking.html" class="btn btn-primary btn-lg mt-3">Pesan Sekarang</a>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section class="popular-destinations mb-5">
+            <h2 class="text-center mb-4">Destinasi Populer</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://i.pinimg.com/1200x/0b/40/7f/0b407f324f3948b4b5878e834d4839a2.jpg" class="card-img-top" alt="Bali">
+                        <div class="card-body">
+                            <h5 class="card-title">Bali</h5>
+                            <p class="card-text">Pulau Dewata yang terkenal dengan keindahan pantai, budaya, dan seninya.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://i.pinimg.com/1200x/61/a3/35/61a335903bd4794d6f267de987abfc2f.jpg" class="card-img-top" alt="Yogyakarta">
+                        <div class="card-body">
+                            <h5 class="card-title">Yogyakarta</h5>
+                            <p class="card-text">Pusat kebudayaan Jawa dengan Candi Borobudur dan Prambanan yang megah.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://i.pinimg.com/1200x/bc/7a/01/bc7a01f74763f4b75789d05928a7590d.jpg" class="card-img-top" alt="Lombok">
+                        <div class="card-body">
+                            <h5 class="card-title">Lombok</h5>
+                            <p class="card-text">Menawarkan pantai yang masih alami, Gunung Rinjani, dan Gili yang eksotis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://i.pinimg.com/1200x/a1/71/9a/a1719a7765428eb512ff97a079ee2983.jpg" class="card-img-top" alt="Jakarta">
+                        <div class="card-body">
+                            <h5 class="card-title">Jakarta</h5>
+                            <p class="card-text">Ibu kota metropolitan yang menjadi pusat bisnis, hiburan, dan kuliner.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="custom-packages mt-5">
+            <h2 class="text-center mb-4">Paket Liburan Custom</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://i.pinimg.com/1200x/77/80/c8/7780c85c2901370b36362d2d0c273295.jpg" class="card-img-top" alt="Paket Petualangan Raja Ampat">
+                        <div class="card-body">
+                            <h5 class="card-title">Petualangan Raja Ampat</h5>
+                            <p class="card-text">Jelajahi keindahan bawah laut Raja Ampat dengan paket menyelam dan snorkeling eksklusif.</p>
+                            <a href="custom_package.html#raja-ampat" class="btn btn-primary mt-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://i.pinimg.com/1200x/1c/91/9f/1c919f976a213e4b025b3400d72f9630.jpg" class="card-img-top" alt="Paket Budaya Toraja">
+                        <div class="card-body">
+                            <h5 class="card-title">Budaya Toraja</h5>
+                            <p class="card-text">Selami kekayaan budaya dan tradisi unik masyarakat Toraja di Sulawesi Selatan.</p>
+                            <a href="custom_package.html#toraja" class="btn btn-primary mt-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://i.pinimg.com/1200x/2d/5f/c7/2d5fc7d62058e22a76f2f4c405a8b792.jpg" class="card-img-top" alt="Paket Trekking Gunung Bromo">
+                        <div class="card-body">
+                            <h5 class="card-title">Trekking Gunung Bromo</h5>
+                            <p class="card-text">Nikmati sensasi mendaki Gunung Bromo dan saksikan matahari terbit yang memukau.</p>
+                            <a href="custom_package.html#bromo" class="btn btn-primary mt-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="custom_package.html" class="btn btn-outline-primary btn-lg">Lihat Semua Paket Custom</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Travelin-Aja</p>
+            <p><strong>UTS Pemrograman Web Portal</strong></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
